@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar eclipse</title>
+</head>
+<style>
+   /* in this project firstly we make  two div name it as universe and sun 
+   after that we give  style to body
+   give style to universe by using . because when we want to give style to the class then we use .before class name */
+    
+body{
+    background-color:antiquewhite;
+    /* 100 vw means */
+    width: 100vw;  
+    height: 100vh;
+
+    /* display is used to how you want  to show childer i.e in flex layooyt or grid layout  */
+    display: grid;
+    /* place item helps to align element */
+    place-items:center;
+}
+.universe{
+
+    width: 40vw;
+
+    /* aspect ratio helps to decide width to height like our insta postr reels format 16/9 or 9/16 */
+    aspect-ratio: 1;
+
+    background-color:#ffbb5c;
+
+    /*  align content basically distribution of space between and around content*/
+    align-content: center;
+
+/* element behav like a block */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+
+    /* animation  property is used to set name duration which type of animation you want to give */
+    animation: skychange 10s linear;}
+
+    /* key frame is used to give animations  */
+
+
+    @keyframes skychange {
+        0%{
+            background-color: #ffbb5cb5;
+        }
+        25%{
+            background-color:#fcbf49;
+        }
+
+        50%{
+            background-color:black;
+        }
+        75%{
+            background-color:#fcbf49;
+        }
+        
+        100%{
+            background-color:#ffbb5cb5;
+        }
+    }
+
+
+
+
+.sun{
+    width: 18vw;
+    aspect-ratio: 1;
+    background-color: #e25e3e;
+    border-radius: 50%;
+    position: relative;
+
+    /* ovrflow property is used when content is not fit inside the parent box */
+    overflow: hidden;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        aspect-ratio: 1;
+        background-color: black;
+         
+         border-radius: inherit;
+      
+         animation: moonwalk 10s ease-in-out;
+
+  
+    }
+   
+        
+        
+    }
+    @keyframes moonwalk {
+        0%{
+            translate:100%;
+            scale: 1;
+        }
+        50% {
+            translate:0%;
+            scale: 0.9;
+        }
+
+        100%{
+            translate: -100%;
+
+        }
+
+
+}
+</style>
+<body>
+    <div class="universe">
+        <div class="sun"></div>
+    </div>
+</body>
+</html>
